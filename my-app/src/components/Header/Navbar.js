@@ -96,7 +96,7 @@ const displayItems = Object.keys(itemFrequency).map((stringifiedItem, index) => 
     {displayItems.length > 0 ? (
       displayItems.map((item, index) => (
         <div key={index} className="text-sm font-semibold">
-          <span className="flex pt-[5px]"><p>The category is {item.category} and the price is {item.price}</p><span class="bg-blue-100 ml-3 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{item.frequency}</span></span>
+          <span className="flex  pt-[5px]"><p>The category is {item.category} and the price is {item.price}</p><span class="bg-blue-100  ml-3 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{item.frequency}</span></span>
           
         </div>
       ))
