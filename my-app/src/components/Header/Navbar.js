@@ -6,6 +6,10 @@ import { useSelector } from "react-redux";
 const Navbar = () => {
   const [navbarStick, setNavbarStick] = useState(false);
   const cartItems = useSelector((state) => state.carting.value);
+  const uniqueItemsSet = new Set(cartItems.map(item => JSON.stringify(item.value)));
+
+const uniqueItemsCount = uniqueItemsSet.size;
+console.log("uniqueitemcount",uniqueItemsCount)
   console.log("cartitems", cartItems);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -20,6 +24,24 @@ const Navbar = () => {
   const topWrapperHandle = (status) => {
     setNavbarStick(status);
   };
+  const itemFrequency = {};
+cartItems.forEach(item => {
+  const stringifiedItem = JSON.stringify(item.value);
+  itemFrequency[stringifiedItem] = (itemFrequency[stringifiedItem] || 0) + 1;
+});
+
+// Unique items ke saath unki frequency aur original values ko map karke ek array mein store karna
+const displayItems = Object.keys(itemFrequency).map((stringifiedItem, index) => {
+  const frequency = itemFrequency[stringifiedItem];
+  const item = JSON.parse(stringifiedItem);
+
+  return {
+    frequency,
+    category: item.category,
+    price: item.price
+  };
+});
+
 
   return (
     <>
@@ -54,7 +76,7 @@ const Navbar = () => {
             }`}
           >
             <img src="Vector.png " className="pt-[0.4rem]" alt="" />(
-            {cartItems.length})
+            {uniqueItemsCount})
           </button>
           <Hamburger showTopWrapper={topWrapperHandle} />
         </div>
@@ -70,15 +92,19 @@ const Navbar = () => {
           <div className="flex items-center justify-center min-h-screen p-4">
             <div className="bg-white lg:w-2/4 sm:w-full  p-6 rounded-lg shadow-lg">
               <div className="flex justify-between flex-col  items-center mb-4">
-              {cartItems && cartItems.length > 0 ? (
-  cartItems.map((value, index) => (
-    <h2 key={index} className="text-sm font-semibold">
-      The category is {value.value.category} and the price is {value.value.price}
-    </h2>
-  ))
-) : (
-  <p>Item not available in the cart</p>
-)}
+              <>
+    {displayItems.length > 0 ? (
+      displayItems.map((item, index) => (
+        <div key={index} className="text-sm font-semibold">
+          <span className="flex pt-[5px]"><p>The category is {item.category} and the price is {item.price}</p><span class="bg-blue-100 ml-3 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{item.frequency}</span></span>
+          
+        </div>
+      ))
+    ) : (
+      <p>Item not available in the cart</p>
+    )}
+  </>
+  
 
                 <button
                   onClick={closeModal}

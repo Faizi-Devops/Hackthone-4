@@ -53,19 +53,17 @@ const Shopping = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
   const onAddtoCardHandler = (value) =>{
-    if (!addedToCart.includes(value.id)) {
+     
       dispatch(addToCart({ value }));
       toast.success("Data added to the cart");
-      setAddedToCart([...addedToCart, value.id]);
-    } else {
-      toast.warning("Item already added to the cart");
-    }
+      
+    
 
   }
 
   return (
     <div>
-        <p className=" font-bold text-[2.5rem]" data-aos="zoom-in">Shopping </p>
+        <p className=" font-bold px-[1rem] text-[2.5rem]" data-aos="zoom-in">Shopping </p>
       <div className="grid lg:grid-cols-3 lg:gap-5 pt-[1.5rem] px-[1rem]">
         {currentItems.map((value, index) => (
           <div data-aos="flip-up"
