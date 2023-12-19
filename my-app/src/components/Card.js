@@ -1,16 +1,6 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+
 const Card = () =>{
-    useEffect(() => {
-        // Initialize AOS
-        AOS.init({
-          duration: 1000, // Animation duration
-          once: true, // Only once while scrolling
-          easing: 'ease-in-out', // Easing for animation
-          // Other options you might want to include
-        });
-      }, []);
+    
     return(
         <div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-[2rem] md:gap-5 lg:gap-5 ">

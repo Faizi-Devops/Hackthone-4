@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import { toast } from "react-toastify";
 const Shopping = () => {
   useEffect(() => {
     // Initialize AOS
@@ -16,11 +17,17 @@ const Shopping = () => {
   const dispatch = useDispatch();
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [addedToCart, setAddedToCart] = useState([]);
   const itemsPerPage = 6;
 
   useEffect(() => {
     getData();
   }, []);
+  const onAddtoCartHandler = (value) => {
+    dispatch(addToCart({ value }));
+    toast.success("Data added to the card")
+    setAddedToCart([...addedToCart, value.id]); // Assuming value.id uniquely identifies each item
+  };
 
   const getData = async () => {
     try {
@@ -73,11 +80,18 @@ const Shopping = () => {
               style={{ width: '100px', height: '150px', objectFit: 'cover' }}
             />
             <button
+              className="absolute bottom-4 right-4 text-sm bg-black hover:bg-blue-700 text-white px-3 rounded-full"
+              onClick={() => onAddtoCartHandler(value)}
+              disabled={addedToCart.includes(value.id)}
+            >
+              {addedToCart.includes(value.id) ? "Added to Cart" : "Add to Cart"}
+            </button>
+            {/* <button
               className="absolute bottom-4 right-4 text-sm bg-black hover:bg-blue-700 text-white px-3 rounded-full "
              onClick={()=>onAddtoCardHandler(value)} style={{ zIndex: 1 }}
-            >
-              Add to Cart
-            </button>
+             disabled={addedToCart.includes(value.id)}>
+              {addedToCart.includes(value.id) ? "Added to Cart" : "Add to Cart"}
+            </button> */}
           </div>
         ))}
       </div>

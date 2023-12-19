@@ -22,7 +22,8 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative z-20">
+    <>
+    <div className="relative z-20 lg:px-[0rem] px-[1rem]">
       {/* Background blur effect when modal is open */}
       <div
         className={`fixed inset-0 bg-black bg-opacity-50 backdrop-blur-lg z-10 ${
@@ -40,7 +41,7 @@ const Navbar = () => {
         </div>
         <div className="flex justify-center items-center gap-2">
           <button
-            className={`bg-black rounded-full sm:px-5 px-3 py-2 text-base font-medium capitalize text-white ${
+            className={`bg-black hidden md:block rounded-full sm:px-5 px-3 py-2 text-base font-medium capitalize text-white ${
               navbarStick && "bg-white text-black"
             }`}
           >
@@ -48,7 +49,7 @@ const Navbar = () => {
           </button>
           <button
             onClick={openModal}
-            className={`bg-black flex rounded-full sm:px-5 px-3 py-2 text-base font-medium capitalize text-white ${
+            className={`bg-black flex rounded-full sm:px-5 px-5 py-2 text-base font-medium capitalize text-white ${
               navbarStick
             }`}
           >
@@ -67,16 +68,17 @@ const Navbar = () => {
           }`}
         >
           <div className="flex items-center justify-center min-h-screen p-4">
-            <div className="bg-white w-full p-6 rounded-lg shadow-lg">
+            <div className="bg-white lg:w-2/4 sm:w-full  p-6 rounded-lg shadow-lg">
               <div className="flex justify-between flex-col  items-center mb-4">
-                {cartItems?.map((value, index) => {
-                  return (
-                    <h2 className="text-xl  font-semibold">
-                      {index + 1})The category is {value.value.category} and the
-                      price is {value.value.price}
-                    </h2>
-                  );
-                })}
+              {cartItems && cartItems.length > 0 ? (
+  cartItems.map((value, index) => (
+    <h2 key={index} className="text-sm font-semibold">
+      The category is {value.value.category} and the price is {value.value.price}
+    </h2>
+  ))
+) : (
+  <p>Item not available in the cart</p>
+)}
 
                 <button
                   onClick={closeModal}
@@ -105,9 +107,14 @@ const Navbar = () => {
         </div>
       </div>
 
-    
 
+
+      
     </div>
+  
+      
+    
+    </>
   );
 };
 

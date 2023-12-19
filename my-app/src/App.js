@@ -12,9 +12,21 @@ import Navbarback from "./navbarback";
 import Navbar from "./components/Header/Navbar";
 import Animation from "./components/Animation";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import React, { useEffect } from "react";
 
+
 function App() {
+  useEffect(() => {
+    AOS.init({
+      // Global settings and options can be configured here
+      duration: 800, // Duration of animations (in milliseconds)
+      easing: 'ease-in-out', // Type of easing for animations
+      // Additional global settings...
+    });
+  }, []);
   return (
     <div className="container mx-auto">
       {/* <Award /> */}
