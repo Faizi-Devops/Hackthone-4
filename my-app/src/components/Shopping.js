@@ -23,11 +23,11 @@ const Shopping = () => {
   useEffect(() => {
     getData();
   }, []);
-  const onAddtoCartHandler = (value) => {
-    dispatch(addToCart({ value }));
-    toast.success("Data added to the card")
-    setAddedToCart([...addedToCart, value.id]); // Assuming value.id uniquely identifies each item
-  };
+  // const onAddtoCartHandler = (value) => {
+  //   dispatch(addToCart({ value }));
+  //   toast.success("Data added to the card")
+  //   setAddedToCart([...addedToCart, value.id]); // Assuming value.id uniquely identifies each item
+  // };
 
   const getData = async () => {
     try {
@@ -79,10 +79,10 @@ const Shopping = () => {
               position: 'relative',
             }}
           >
-            <img
+            <img 
               src={value.image}
               alt=""
-              style={{ width: '100px', height: '150px', objectFit: 'cover' }}
+              style={{ width: '100px', height: '150px', objectFit: 'cover', mixBlendMode: 'multiply' }}
             />
            
             <button
