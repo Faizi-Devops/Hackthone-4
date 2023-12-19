@@ -3,24 +3,3 @@ body {
   background: white;
 
 }
-.grid-cols-12{
-  grid-template-columns: 13;
-}
-.m-1{
-  
-  border-radius: 8px;
-  border-left: none !important;
-  border-top: none !important;
-  transition: .8s;
-
-  }
-  .m-1:hover{
-      background: #f0f0f0;
-  }
-  body{
-      overflow-x: hidden;
-  }
-.m-1:nth-child(8n),
-.m-1:nth-child(8n+8) {
-  background: #f0f0f0;
-}

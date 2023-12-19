@@ -49,7 +49,7 @@ const Navbar = () => {
           <button
             onClick={openModal}
             className={`bg-black flex rounded-full sm:px-5 px-3 py-2 text-base font-medium capitalize text-white ${
-              navbarStick && "bg-white text-black"
+              navbarStick
             }`}
           >
             <img src="Vector.png " className="pt-[0.4rem]" alt="" />(
@@ -104,6 +104,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+
+    
+
     </div>
   );
 };
