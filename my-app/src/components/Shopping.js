@@ -53,8 +53,13 @@ const Shopping = () => {
     setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
   };
   const onAddtoCardHandler = (value) =>{
-
-  dispatch(addToCart({value}))
+    if (!addedToCart.includes(value.id)) {
+      dispatch(addToCart({ value }));
+      toast.success("Data added to the cart");
+      setAddedToCart([...addedToCart, value.id]);
+    } else {
+      toast.warning("Item already added to the cart");
+    }
 
   }
 
@@ -83,8 +88,9 @@ const Shopping = () => {
             <button
               className="absolute bottom-4 right-4 text-sm bg-black hover:bg-blue-700 text-white px-3 rounded-full "
              onClick={()=>onAddtoCardHandler(value)} style={{ zIndex: 1 }}
-             disabled={addedToCart.includes(value.id)}>
-              {addedToCart.includes(value.id) ? "Added to Cart" : "Add to Cart"}
+             >
+              Add to cart
+             
             </button>
           </div>
         ))}
