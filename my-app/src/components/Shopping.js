@@ -79,19 +79,13 @@ const Shopping = () => {
               alt=""
               style={{ width: '100px', height: '150px', objectFit: 'cover' }}
             />
+           
             <button
-              className="absolute bottom-4 right-4 text-sm bg-black hover:bg-blue-700 text-white px-3 rounded-full"
-              onClick={() => onAddtoCartHandler(value)}
-              disabled={addedToCart.includes(value.id)}
-            >
-              {addedToCart.includes(value.id) ? "Added to Cart" : "Add to Cart"}
-            </button>
-            {/* <button
               className="absolute bottom-4 right-4 text-sm bg-black hover:bg-blue-700 text-white px-3 rounded-full "
              onClick={()=>onAddtoCardHandler(value)} style={{ zIndex: 1 }}
              disabled={addedToCart.includes(value.id)}>
               {addedToCart.includes(value.id) ? "Added to Cart" : "Add to Cart"}
-            </button> */}
+            </button>
           </div>
         ))}
       </div>
