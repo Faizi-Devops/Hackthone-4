@@ -11,7 +11,8 @@ import Footer from "./components/Footer";
 import Navbarback from "./navbarback";
 import Navbar from "./components/Header/Navbar";
 import Animation from "./components/Animation";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -29,6 +30,7 @@ function App() {
   }, []);
   return (
     <div className="container mx-auto">
+      <ToastContainer />
       {/* <Award /> */}
       <Navbar />
       <div className="pt-[8rem] pb-[6rem]">
