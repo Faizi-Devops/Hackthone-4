@@ -120,7 +120,7 @@ const Shopping = () => {
 
                  onClick={() => setCurrentPage(i + 1)}
                  className={`flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-red hover:text-gray-700 hover:cursor-pointer dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${
-                   currentPage === i + 1 ? 'text-blue-600 bg-black hover:bg-blue-700 hover:text-blue-700 dark:border-gray-700 dark:text-white' : ''
+                   currentPage === i + 1 ? 'text-white bg-black hover:bg-blue-700 hover:text-blue-700 dark:border-gray-700 dark:text-white' : ''
                  }`}
                >
                  {i + 1}
