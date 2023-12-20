@@ -15,12 +15,12 @@ const Logos = () =>{
     
        
     return(
-        <div className="bg-black rounded-2xl">
+        <div className="bg-black rounded-2xl" style={{ fontFamily: "Mono Sans" }}>
             
             <div className="lg:px-[3rem] lg:py-[4rem] px-[1.5rem] py-[3rem] ">
                 
             <div class="flex items-center">
-    <p class="flex-grow lg:text-[1.25rem] text-white lg:text-start text-center font-bold" data-aos="fade-up">We’ve worked with hundreds of amazing people</p>
+    <p class="flex-grow lg:text-[1.1rem] font-[500] text-white lg:text-start text-center " data-aos="fade-up">We’ve worked with hundreds of amazing people</p>
     <img src="Line1.png" className="full lg:block hidden" alt="Kuch" />
 </div>
 <div className="grid lg:grid-cols-4 grid-cols-2 pt-[1.5rem] lg:pt-[1.5rem]">
