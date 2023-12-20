@@ -1,6 +1,6 @@
 const Tellus = () => {
   return (
-    <div className="bg-black rounded-2xl lg:px-[2rem] px-[2rem] py-[5rem]  lg:py-[3rem] tracking-[0px]" style={{ fontFamily: "Mono Sans" }}>
+    <div className="bg-black tracking-tighter rounded-2xl lg:px-[2rem] px-[2rem] py-[5rem]  lg:py-[3rem] tracking-[0px]" style={{ fontFamily: "Mono Sans" }}>
       <p className="text-white text-[2rem] ">Tell us about your project</p>
       <button class="bg-white hover:bg-blue-700 mt-[1rem] text-sm text-black font-bold py-1 px-4 rounded-full">
         Say Hej

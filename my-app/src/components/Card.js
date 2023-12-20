@@ -3,7 +3,7 @@ const Card = () =>{
     
     return(
         <div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-[2rem] md:gap-5 lg:gap-5 " style={{ fontFamily: "Mono Sans" }}>
+            <div className="grid tracking-tighter lg:grid-cols-3 md:grid-cols-2 grid-cols-1 my-[2rem] md:gap-5 lg:gap-5 " style={{ fontFamily: "Mono Sans" }}>
                 
 <div data-aos="flip-up" class="block max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow mt-[10px] mx-[1rem] lg:mx-[0rem] hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
 <img src="Frame.png" alt="" />

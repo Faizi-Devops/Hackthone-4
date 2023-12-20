@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 px-[1rem]" style={{ fontFamily: "Mono Sans" }}>
+      <div className="grid tracking-tighter lg:grid-cols-4 md:grid-cols-2 px-[1rem]" style={{ fontFamily: "Mono Sans" }}>
         <div>
           <p className=" text-[1.2rem] pt-[1rem] font-[600]">Work</p>
           <p className="text-[1rem] font-weight-500 text-[#404040] pt-[1rem]">
