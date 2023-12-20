@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Hamburger from "./Hamburger";
 import NavSvg from "./NavSvg";
 import { useSelector } from "react-redux";
@@ -12,6 +12,23 @@ const uniqueItemsCount = uniqueItemsSet.size;
 console.log("uniqueitemcount",uniqueItemsCount)
   console.log("cartitems", cartItems);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  useEffect(() => {
+    // Function to enable/disable body scroll
+    const handleBodyScroll = (isOpen) => {
+      const body = document.querySelector('body');
+      if (body) {
+        body.style.overflow = isOpen ? 'hidden' : 'auto';
+      }
+    };
+
+    handleBodyScroll(isModalOpen); // Disable body scroll when modal is initially opened
+
+    return () => {
+      // Re-enable body scroll when component unmounts or modal is closed
+      handleBodyScroll(false);
+    };
+  }, [isModalOpen]); 
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -84,53 +101,61 @@ const displayItems = Object.keys(itemFrequency).map((stringifiedItem, index) => 
 
       <div className=" flex items-center justify-center">
         {/* Modal */}
-        <div
-          className={`fixed z-20 inset-0 overflow-y-auto ${
-            isModalOpen ? "" : "hidden"
-          }`}
-        >
-          <div className="flex items-center justify-center min-h-screen p-4">
-            <div className="bg-white lg:w-2/4 sm:w-full  p-6 rounded-lg shadow-lg">
-              <div className="flex justify-between flex-col  items-center mb-4">
-              <>
-    {displayItems.length > 0 ? (
-      displayItems.map((item, index) => (
-        <div key={index} className="text-sm font-semibold">
-          <span className="flex  pt-[5px]"><p>The category is {item.category} and the price is {item.price}</p><span class="bg-blue-100  ml-3 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{item.frequency}</span></span>
-          
-        </div>
-      ))
-    ) : (
-      <p>Item not available in the cart</p>
-    )}
-  </>
-  
-
-                <button
-                  onClick={closeModal}
-                  className="text-gray-600 hover:text-gray-800 focus:outline-none"
-                >
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    ></path>
-                  </svg>
-                </button>
+        <div className={`fixed z-20 inset-0 overflow-y-auto ${isModalOpen ? "" : "hidden"}`}>
+  <div className="flex items-center justify-center min-h-screen p-4">
+    <div className="bg-white lg:w-2/4 sm:w-full p-6 rounded-lg shadow-lg">
+      <div className="flex justify-between flex-col items-center mb-4">
+        <>
+          {displayItems.length > 0 ? (
+            displayItems.map((item, index) => (
+              <div key={index} className="text-sm font-semibold">
+                <span className="flex pt-[5px]">
+                  <p>
+                    The category is {item.category} and the price is {item.price}
+                  </p>
+                  <span className="bg-blue-100 ml-3 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">
+                    {item.frequency}
+                  </span>
+                </span>
               </div>
+            ))
+          ) : (
+            <p>Item not available in the cart</p>
+          )}
+        </>
 
-              {/* You can add your content inside the modal */}
-            </div>
-          </div>
-        </div>
+        <button
+          onClick={closeModal}
+          className="text-gray-600 hover:text-gray-800 focus:outline-none"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      {/* Scrollable content area */}
+      <div className="max-h-60 overflow-y-auto">
+        {/* Add your scrollable content here */}
+        {/* ... */}
+        {/* Add your content here that you want to be scrollable */}
+      </div>
+
+      {/* You can add your content inside the modal */}
+    </div>
+  </div>
+</div>
       </div>
 
 
