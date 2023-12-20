@@ -29,7 +29,8 @@ function App() {
     });
   }, []);
   return (
-    <div className="container mx-auto">
+    <div>
+    <div className="container mx-auto lg:px-[1rem]">
       <ToastContainer />
       {/* <Award /> */}
       <Navbar />
@@ -38,8 +39,12 @@ function App() {
       </div>
       <Animation />
 
-      <Logos />
-      <Harness />
+     
+      
+    </div>
+    <Logos />
+    <div className="container mx-auto">
+    <Harness />
       <Card />
       <Team />
       <Shopping />
@@ -50,6 +55,7 @@ function App() {
       <div className="pt-[4rem]">
         <Footer />
         <Navbarback />
+      </div>
       </div>
     </div>
   );

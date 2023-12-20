@@ -17,7 +17,7 @@ const Logos = () =>{
     return(
         <div className="bg-black rounded-2xl" style={{ fontFamily: "Mono Sans" }}>
             
-            <div className="lg:px-[3rem] lg:py-[4rem] px-[1.5rem] py-[3rem] ">
+            <div className="lg:px-[1rem] container mx-auto lg:py-[4rem] px-[1.5rem] py-[3rem] ">
                 
             <div class="flex items-center">
     <p class="flex-grow lg:text-[1.1rem] font-[500] text-white lg:text-start text-center " data-aos="fade-up">We’ve worked with hundreds of amazing people</p>
