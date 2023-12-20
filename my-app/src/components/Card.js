@@ -18,7 +18,7 @@ const Card = () =>{
 <p className="text-[0.9rem] text-[1rem] lg:pt-[0.5rem] text-[#515151] leading-[20.8px] font-[300]">Unseal is the first NFT platform where users can mint and trade NFTs of their own personal health records, allowing them to take control of their data.</p>
 </div>
 <div data-aos="flip-up" class="block max-w-full p-6 bg-white border border-gray-200 rounded-lg mt-[10px] mx-[1rem] lg:mx-[0rem] shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-<img src="frame.png" alt="" />
+<img src="Frame.png" alt="" />
 <p class="font-normal text-gray-700 dark:text-gray-400 lg:pt-[1rem]"><b>2023</b>/ Case Study</p>
 <p className=" text-[1.5rem] leading-[27.6px] lg:pt-[1rem] font-[600]">Overcome your fears, find your match</p>
 <p className="text-[0.9rem] lg:pt-[0.5rem] text-[#515151] leading-[20.8px] font-[300]">Find love in the face of fear — Phobia is a dating app that matches users based on their mutual phobias so they can be scared together.</p>
