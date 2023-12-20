@@ -63,7 +63,7 @@ const Shopping = () => {
 
   return (
     <div>
-        <p className=" font-bold px-[1rem] text-[2.5rem]" data-aos="zoom-in">Shopping </p>
+        <p className=" font-[600] px-[1rem] text-[2.5rem]" data-aos="zoom-in" style={{ fontFamily: "Mono Sans" }}>Shopping </p>
       <div className="grid lg:grid-cols-3 lg:gap-5 pt-[1.5rem] px-[1rem]">
         {currentItems.map((value, index) => (
           <div data-aos="flip-up"

@@ -1,9 +1,9 @@
 const Footer = () => {
   return (
     <div>
-      <div className="grid lg:grid-cols-4 md:grid-cols-2 px-[1rem]">
+      <div className="grid lg:grid-cols-4 md:grid-cols-2 px-[1rem]" style={{ fontFamily: "Mono Sans" }}>
         <div>
-          <p className="font-medium text-[1.2rem] pt-[1rem]">Work</p>
+          <p className=" text-[1.2rem] pt-[1rem] font-[600]">Work</p>
           <p className="text-[1rem] font-weight-500 text-[#404040] pt-[1rem]">
             FamilyFund
           </p>
@@ -12,14 +12,14 @@ const Footer = () => {
           <p className="pt-[0.5rem]">See All</p>
         </div>
         <div>
-          <p className="font-medium text-[1.2rem] pt-[1rem]">Company</p>
+          <p className=" text-[1.2rem] pt-[1rem] font-[600]">Company</p>
           <p className="text-[1rem] font-weight-500 text-[#404040] pt-[1rem]">About</p>
           <p className="pt-[0.5rem]">Process</p>
           <p className="pt-[0.5rem]">Blog</p>
           <p className="pt-[0.5rem]">Contact us</p>
         </div>
         <div>
-          <p className="font-medium text-[1.2rem] pt-[1rem]">Connect</p>
+          <p className=" text-[1.2rem] pt-[1rem] font-[600]">Connect</p>
           <p className="text-[1rem] font-weight-500 text-[#404040] pt-[1rem]">Facebook</p>
           <p className="pt-[0.5rem]">Instagram</p>
           <p className="pt-[0.5rem]">Twitter</p>
@@ -27,7 +27,7 @@ const Footer = () => {
           <p className="pt-[0.5rem]">Dribbble</p>
         </div>
         <div>
-          <p className="font-medium text-[1.2rem] pt-[1rem]">
+          <p className=" text-[1.2rem] pt-[1rem] font-[600]">
             Sign up for our newsletter
           </p>
           <p className="text-[1rem] font-weight-500 text-[#404040] pt-[1rem]">
